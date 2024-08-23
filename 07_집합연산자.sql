@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------
--- ÁıÇÕ ¿¬»êÀÚ
--- ¼­·Î ´Ù¸¥ Äõ¸® °á°úÀÇ ÇàµéÀ» ÇÏ³ª·Î °áÇÕ, ºñ±³, Â÷ÀÌ¸¦ ±¸ÇÒ ¼ö ÀÖ°Ô ÇØ ÁÖ´Â ¿¬»êÀÚ
--- UNION(ÇÕÁıÇÕ Áßº¹x), UNION ALL(ÇÕÁıÇÕ Áßº¹ o), INTERSECT(±³ÁıÇÕ), MINUS(Â÷ÁıÇÕ)
--- À§ ¾Æ·¡ column °³¼ö¿Í µ¥ÀÌÅÍ Å¸ÀÔÀÌ Á¤È®È÷ ÀÏÄ¡ÇØ¾ß ÇÕ´Ï´Ù.
+-- ì§‘í•© ì—°ì‚°ì
+-- ì„œë¡œ ë‹¤ë¥¸ ì¿¼ë¦¬ ê²°ê³¼ì˜ í–‰ë“¤ì„ í•˜ë‚˜ë¡œ ê²°í•©, ë¹„êµ, ì°¨ì´ë¥¼ êµ¬í•  ìˆ˜ ìˆê²Œ í•´ ì£¼ëŠ” ì—°ì‚°ì
+-- UNION(í•©ì§‘í•© ì¤‘ë³µx), UNION ALL(í•©ì§‘í•© ì¤‘ë³µ o), INTERSECT(êµì§‘í•©), MINUS(ì°¨ì§‘í•©)
+-- ìœ„ ì•„ë˜ column ê°œìˆ˜ì™€ ë°ì´í„° íƒ€ì…ì´ ì •í™•íˆ ì¼ì¹˜í•´ì•¼ í•©ë‹ˆë‹¤.
 
--- UNION -> Áßº¹ µ¥ÀÌÅÍ¸¦ Çã¿ëÇÏÁö ¾ÊÀ½. ÀÚµ¿À¸·Î Á¤·ÄÀÌ ÀÏ¾î³².(Ã¹¹øÂ° ÄÃ·³ ¿À¸§Â÷°¡ default)
+-- UNION -> ì¤‘ë³µ ë°ì´í„°ë¥¼ í—ˆìš©í•˜ì§€ ì•ŠìŒ. ìë™ìœ¼ë¡œ ì •ë ¬ì´ ì¼ì–´ë‚¨.(ì²«ë²ˆì§¸ ì»¬ëŸ¼ ì˜¤ë¦„ì°¨ê°€ default)
 SELECT
     employee_id, first_name
 FROM employees
@@ -15,12 +15,12 @@ SELECT
 FROM employees
 WHERE department_id = 20;
 
--- UNIONALL -> Áßº¹ µ¥ÀÌÅÍ¸¦ Çã¿ë. ÀÚµ¿À¸·Î Á¤·ÄÀÌ ÀÏ¾î³².(Ã¹¹øÂ° ÄÃ·³ ¿À¸§Â÷°¡ default)
+-- UNIONALL -> ì¤‘ë³µ ë°ì´í„°ë¥¼ í—ˆìš©. ìë™ìœ¼ë¡œ ì •ë ¬ì´ ì¼ì–´ë‚¨.(ì²«ë²ˆì§¸ ì»¬ëŸ¼ ì˜¤ë¦„ì°¨ê°€ default)
 SELECT
     employee_id, first_name
 FROM employees
 WHERE hire_date LIKE '04%'
-UNION ALL -- Áßº¹µ¥ÀÌÅÍ Çã¿ë
+UNION ALL -- ì¤‘ë³µë°ì´í„° í—ˆìš©
 SELECT
     employee_id, first_name
 FROM employees
@@ -30,7 +30,7 @@ SELECT
     employee_id, first_name
 FROM employees
 WHERE hire_date LIKE '04%'
-INTERSECT -- ±³ÁıÇÕ
+INTERSECT -- êµì§‘í•©
 SELECT
     employee_id, first_name
 FROM employees
@@ -40,7 +40,7 @@ SELECT
     employee_id, first_name
 FROM employees
 WHERE hire_date LIKE '04%'
-MINUS -- Â÷ÁıÇÕ
+MINUS -- ì°¨ì§‘í•©
 SELECT
     employee_id, first_name
 FROM employees
